@@ -43,6 +43,6 @@ void
 explicit_bzero(void *s, size_t len)
 {
   memset(s, '\0', len);
-  asm volatile ("":::"memory");
+  asm volatile (""::"g"(s):"memory");
 }
 #endif
